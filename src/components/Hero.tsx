@@ -22,7 +22,7 @@ export function Hero() {
           </div>
           <h1 className="text-[clamp(2.75rem,8vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.04em]">
             Engineering and<br />
-            design, held in<br />
+            <span className="text-[color:var(--signal)]">design</span>, held in<br />
             the same hand<span className="text-[color:var(--signal)]">.</span>
           </h1>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -30,7 +30,7 @@ export function Hero() {
             We don't shout — we ship. Every element is grid-derived. Nothing is decorative.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="group inline-flex h-12 items-center gap-2 rounded-sm bg-foreground px-6 font-mono text-xs uppercase tracking-widest text-background transition-opacity hover:opacity-90">
+            <a href="#contact" className="group inline-flex h-12 items-center gap-2 rounded-sm bg-[color:var(--signal)] px-6 font-mono text-xs uppercase tracking-widest text-white transition-opacity hover:opacity-90">
               Start a project
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
