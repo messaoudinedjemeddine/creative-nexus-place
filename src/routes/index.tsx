@@ -1,26 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ThemeProvider } from "@/lib/theme";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Work } from "@/components/Work";
+import { Services } from "@/components/Services";
+import { Process } from "@/components/Process";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Nexus — Studio for Web & Design" },
+      { name: "description", content: "Nexus is a small studio building considered websites and digital products. Engineering and design, held in the same hand." },
+      { property: "og:title", content: "Nexus — Studio for Web & Design" },
+      { property: "og:description", content: "Engineering and design, held in the same hand." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <ThemeProvider>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
+        <main>
+          <Hero />
+          <Work />
+          <Services />
+          <Process />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
+  );
 }
