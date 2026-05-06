@@ -7,7 +7,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="border-b border-border bg-secondary/30">
+    <section id="process" className="border-b border-border bg-[color:var(--signal)]/8 dark:bg-[color:var(--signal)]/10">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="mb-16 flex items-center gap-3">
           <span className="hairline max-w-12" />
@@ -20,7 +20,7 @@ export function Process() {
 
         <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
-            <div key={s.no} className="border-t border-foreground pt-6">
+            <div key={s.no} className="border-t-2 border-[color:var(--signal)] pt-6">
               <div className="mb-8 flex items-baseline justify-between">
                 <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">phase {s.no}</span>
               </div>
