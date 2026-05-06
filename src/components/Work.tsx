@@ -1,9 +1,5 @@
-const work = [
-  { no: "W·01", client: "Halden Audio", scope: "Brand · Web", year: "26", tag: "E-commerce" },
-  { no: "W·02", client: "Forma Studio", scope: "Identity · Site", year: "26", tag: "Architecture" },
-  { no: "W·03", client: "Lattice Labs", scope: "Product · UI", year: "25", tag: "SaaS" },
-  { no: "W·04", client: "North Index", scope: "Web · CMS", year: "25", tag: "Editorial" },
-];
+import { Link } from "@tanstack/react-router";
+import { projects } from "@/data/projects";
 
 export function Work() {
   return (
@@ -20,14 +16,18 @@ export function Work() {
             </h2>
           </div>
           <a href="#contact" className="hidden font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground md:inline">
-            Index → 24 / 24
+            Index → {projects.length} / {projects.length}
           </a>
         </div>
 
         <ul className="border-t border-border">
-          {work.map((w) => (
+          {projects.map((w) => (
             <li key={w.no}>
-              <a href="#" className="group grid grid-cols-12 items-center gap-4 border-b border-border py-6 transition-colors hover:bg-secondary/40 md:py-8">
+              <Link
+                to="/work/$slug"
+                params={{ slug: w.slug }}
+                className="group grid grid-cols-12 items-center gap-4 border-b border-border py-6 transition-colors hover:bg-secondary/40 md:py-8"
+              >
                 <span className="col-span-2 font-mono text-xs uppercase tracking-widest text-muted-foreground md:col-span-1">{w.no}</span>
                 <span className="col-span-10 text-xl font-semibold tracking-tight md:col-span-5 md:text-2xl">
                   {w.client}
@@ -41,7 +41,7 @@ export function Work() {
                 <span className="col-span-12 text-right font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors group-hover:text-[color:var(--signal)] md:col-span-1">
                   ’{w.year} ↗
                 </span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
