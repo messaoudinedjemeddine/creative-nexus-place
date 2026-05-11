@@ -256,3 +256,55 @@ function Block({ heading, body }: { heading: string; body: string }) {
     </div>
   );
 }
+
+function Placeholder({
+  ratio = "16/9",
+  label,
+  caption,
+  kind = "image",
+}: {
+  ratio?: string;
+  label: string;
+  caption: string;
+  kind?: "image" | "screenshot" | "gif";
+}) {
+  return (
+    <figure className="group relative w-full">
+      <div
+        className="relative w-full overflow-hidden border border-border bg-[color:var(--signal)]/5"
+        style={{ aspectRatio: ratio }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(135deg, var(--signal) 0 1px, transparent 1px 14px)",
+          }}
+        />
+        <div aria-hidden className="absolute inset-0">
+          <div className="absolute left-1/2 top-0 h-full w-px bg-[color:var(--signal)]/20" />
+          <div className="absolute left-0 top-1/2 h-px w-full bg-[color:var(--signal)]/20" />
+          <span className="absolute left-3 top-3 h-2 w-2 border-l border-t border-[color:var(--signal)]" />
+          <span className="absolute right-3 top-3 h-2 w-2 border-r border-t border-[color:var(--signal)]" />
+          <span className="absolute bottom-3 left-3 h-2 w-2 border-b border-l border-[color:var(--signal)]" />
+          <span className="absolute bottom-3 right-3 h-2 w-2 border-b border-r border-[color:var(--signal)]" />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2 px-4 text-center">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--signal)]">
+              {kind} · placeholder
+            </span>
+            <span className="text-2xl font-semibold tracking-tight text-foreground/70 md:text-3xl">
+              {label}
+            </span>
+          </div>
+        </div>
+      </div>
+      <figcaption className="mt-3 flex items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+        <span className="truncate">{caption}</span>
+        <span className="shrink-0">{ratio}</span>
+      </figcaption>
+    </figure>
+  );
+}
