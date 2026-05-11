@@ -130,14 +130,14 @@ function ProjectPage() {
 
               <div className="col-span-12 space-y-12 md:col-span-8">
                 <Block heading="Challenge" body={project.challenge} />
-                <Placeholder ratio="4/3" label="Process" caption="Discovery — sketches, references, audit" kind="gif" />
+                <Placeholder ratio="4/3" size="1200×900" label="Process" caption="Discovery — sketches, references, audit" kind="gif" src={`https://picsum.photos/seed/${project.slug}-process/1200/900`} />
                 <Block heading="Approach" body={project.approach} />
                 <div className="grid grid-cols-2 gap-4">
-                  <Placeholder ratio="1/1" label="Detail" caption="Type system" kind="image" />
-                  <Placeholder ratio="1/1" label="Detail" caption="Component grid" kind="image" />
+                  <Placeholder ratio="1/1" size="800×800" label="Detail" caption="Type system" kind="image" src={`https://picsum.photos/seed/${project.slug}-detail-a/800/800`} />
+                  <Placeholder ratio="1/1" size="800×800" label="Detail" caption="Component grid" kind="image" src={`https://picsum.photos/seed/${project.slug}-detail-b/800/800`} />
                 </div>
                 <Block heading="Outcome" body={project.outcome} />
-                <Placeholder ratio="16/10" label="Shipped" caption="Final interface — desktop" kind="screenshot" />
+                <Placeholder ratio="16/10" size="1600×1000" label="Shipped" caption="Final interface — desktop" kind="screenshot" src={`https://picsum.photos/seed/${project.slug}-shipped/1600/1000`} />
               </div>
             </div>
           </section>
