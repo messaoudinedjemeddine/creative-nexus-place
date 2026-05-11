@@ -150,9 +150,9 @@ function ProjectPage() {
                 <span className="eyebrow">Gallery · Selected frames</span>
               </div>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                <Placeholder ratio="3/4" label="01" caption="Mobile flow" kind="screenshot" />
-                <Placeholder ratio="3/4" label="02" caption="Interaction" kind="gif" />
-                <Placeholder ratio="3/4" label="03" caption="Identity in use" kind="image" />
+                <Placeholder ratio="3/4" size="900×1200" label="01" caption="Mobile flow" kind="screenshot" src={`https://picsum.photos/seed/${project.slug}-g1/900/1200`} />
+                <Placeholder ratio="3/4" size="900×1200" label="02" caption="Interaction" kind="gif" src={`https://picsum.photos/seed/${project.slug}-g2/900/1200`} />
+                <Placeholder ratio="3/4" size="900×1200" label="03" caption="Identity in use" kind="image" src={`https://picsum.photos/seed/${project.slug}-g3/900/1200`} />
               </div>
             </div>
           </section>
