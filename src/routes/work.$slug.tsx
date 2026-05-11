@@ -82,6 +82,13 @@ function ProjectPage() {
             </div>
           </section>
 
+          {/* Cover placeholder */}
+          <section className="border-b border-border">
+            <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+              <Placeholder ratio="16/9" label="Cover" caption={`${project.client} — hero composition`} kind="image" />
+            </div>
+          </section>
+
           {/* Meta grid */}
           <section className="border-b border-border bg-[color:var(--signal)]/8">
             <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4 md:py-16">
@@ -123,8 +130,29 @@ function ProjectPage() {
 
               <div className="col-span-12 space-y-12 md:col-span-8">
                 <Block heading="Challenge" body={project.challenge} />
+                <Placeholder ratio="4/3" label="Process" caption="Discovery — sketches, references, audit" kind="gif" />
                 <Block heading="Approach" body={project.approach} />
+                <div className="grid grid-cols-2 gap-4">
+                  <Placeholder ratio="1/1" label="Detail" caption="Type system" kind="image" />
+                  <Placeholder ratio="1/1" label="Detail" caption="Component grid" kind="image" />
+                </div>
                 <Block heading="Outcome" body={project.outcome} />
+                <Placeholder ratio="16/10" label="Shipped" caption="Final interface — desktop" kind="screenshot" />
+              </div>
+            </div>
+          </section>
+
+          {/* Wide gallery placeholder */}
+          <section className="border-b border-border bg-[color:var(--signal)]/5">
+            <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+              <div className="mb-8 flex items-center gap-3">
+                <span className="hairline max-w-12" />
+                <span className="eyebrow">Gallery · Selected frames</span>
+              </div>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                <Placeholder ratio="3/4" label="01" caption="Mobile flow" kind="screenshot" />
+                <Placeholder ratio="3/4" label="02" caption="Interaction" kind="gif" />
+                <Placeholder ratio="3/4" label="03" caption="Identity in use" kind="image" />
               </div>
             </div>
           </section>
@@ -226,5 +254,57 @@ function Block({ heading, body }: { heading: string; body: string }) {
       </div>
       <p className="text-xl leading-relaxed tracking-tight md:text-2xl">{body}</p>
     </div>
+  );
+}
+
+function Placeholder({
+  ratio = "16/9",
+  label,
+  caption,
+  kind = "image",
+}: {
+  ratio?: string;
+  label: string;
+  caption: string;
+  kind?: "image" | "screenshot" | "gif";
+}) {
+  return (
+    <figure className="group relative w-full">
+      <div
+        className="relative w-full overflow-hidden border border-border bg-[color:var(--signal)]/5"
+        style={{ aspectRatio: ratio }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(135deg, var(--signal) 0 1px, transparent 1px 14px)",
+          }}
+        />
+        <div aria-hidden className="absolute inset-0">
+          <div className="absolute left-1/2 top-0 h-full w-px bg-[color:var(--signal)]/20" />
+          <div className="absolute left-0 top-1/2 h-px w-full bg-[color:var(--signal)]/20" />
+          <span className="absolute left-3 top-3 h-2 w-2 border-l border-t border-[color:var(--signal)]" />
+          <span className="absolute right-3 top-3 h-2 w-2 border-r border-t border-[color:var(--signal)]" />
+          <span className="absolute bottom-3 left-3 h-2 w-2 border-b border-l border-[color:var(--signal)]" />
+          <span className="absolute bottom-3 right-3 h-2 w-2 border-b border-r border-[color:var(--signal)]" />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2 px-4 text-center">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--signal)]">
+              {kind} · placeholder
+            </span>
+            <span className="text-2xl font-semibold tracking-tight text-foreground/70 md:text-3xl">
+              {label}
+            </span>
+          </div>
+        </div>
+      </div>
+      <figcaption className="mt-3 flex items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+        <span className="truncate">{caption}</span>
+        <span className="shrink-0">{ratio}</span>
+      </figcaption>
+    </figure>
   );
 }
