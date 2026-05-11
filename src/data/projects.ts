@@ -43,6 +43,13 @@ export const projects: Project[] = [
       { label: "Avg. order", value: "+22%" },
       { label: "LCP", value: "1.1s" },
     ],
+    testimonial: {
+      quote:
+        "Nexus treated our catalog like a body of work, not a checkout funnel. The new storefront finally sounds like Halden — quiet, deliberate, and confident.",
+      author: "Mara Halden",
+      role: "Founder",
+      company: "Halden Audio",
+    },
   },
   {
     slug: "forma-studio",
