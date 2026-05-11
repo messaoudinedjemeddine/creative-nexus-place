@@ -130,8 +130,29 @@ function ProjectPage() {
 
               <div className="col-span-12 space-y-12 md:col-span-8">
                 <Block heading="Challenge" body={project.challenge} />
+                <Placeholder ratio="4/3" label="Process" caption="Discovery — sketches, references, audit" kind="gif" />
                 <Block heading="Approach" body={project.approach} />
+                <div className="grid grid-cols-2 gap-4">
+                  <Placeholder ratio="1/1" label="Detail" caption="Type system" kind="image" />
+                  <Placeholder ratio="1/1" label="Detail" caption="Component grid" kind="image" />
+                </div>
                 <Block heading="Outcome" body={project.outcome} />
+                <Placeholder ratio="16/10" label="Shipped" caption="Final interface — desktop" kind="screenshot" />
+              </div>
+            </div>
+          </section>
+
+          {/* Wide gallery placeholder */}
+          <section className="border-b border-border bg-[color:var(--signal)]/5">
+            <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+              <div className="mb-8 flex items-center gap-3">
+                <span className="hairline max-w-12" />
+                <span className="eyebrow">Gallery · Selected frames</span>
+              </div>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                <Placeholder ratio="3/4" label="01" caption="Mobile flow" kind="screenshot" />
+                <Placeholder ratio="3/4" label="02" caption="Interaction" kind="gif" />
+                <Placeholder ratio="3/4" label="03" caption="Identity in use" kind="image" />
               </div>
             </div>
           </section>
