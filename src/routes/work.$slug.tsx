@@ -151,6 +151,36 @@ function ProjectPage() {
             </div>
           </section>
 
+          {/* Testimonial */}
+          <section className="border-b border-border">
+            <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+              <div className="mb-10 flex items-center gap-3">
+                <span className="hairline max-w-12" />
+                <span className="eyebrow">Word from the client</span>
+              </div>
+              <figure className="grid grid-cols-12 gap-8 border-l-2 border-[color:var(--signal)] pl-6 md:pl-10">
+                <blockquote className="col-span-12 md:col-span-9">
+                  <p className="text-2xl font-medium leading-snug tracking-tight text-foreground md:text-4xl">
+                    <span className="text-[color:var(--signal)]">“</span>
+                    {project.testimonial.quote}
+                    <span className="text-[color:var(--signal)]">”</span>
+                  </p>
+                </blockquote>
+                <figcaption className="col-span-12 flex flex-col gap-1 md:col-span-3 md:items-end md:text-right">
+                  <div className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                    Client
+                  </div>
+                  <div className="mt-2 text-base font-semibold">
+                    {project.testimonial.author}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {project.testimonial.role}, {project.testimonial.company}
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
           {/* Next project */}
           <section className="border-b border-border">
             <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">

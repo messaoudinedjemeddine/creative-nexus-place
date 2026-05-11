@@ -14,6 +14,7 @@ export type Project = {
   approach: string;
   outcome: string;
   metrics: { label: string; value: string }[];
+  testimonial: { quote: string; author: string; role: string; company: string };
   url?: string;
 };
 
@@ -42,6 +43,13 @@ export const projects: Project[] = [
       { label: "Avg. order", value: "+22%" },
       { label: "LCP", value: "1.1s" },
     ],
+    testimonial: {
+      quote:
+        "Nexus treated our catalog like a body of work, not a checkout funnel. The new storefront finally sounds like Halden — quiet, deliberate, and confident.",
+      author: "Mara Halden",
+      role: "Founder",
+      company: "Halden Audio",
+    },
   },
   {
     slug: "forma-studio",
@@ -67,6 +75,13 @@ export const projects: Project[] = [
       { label: "Sessions", value: "+3.1×" },
       { label: "Bounce", value: "-41%" },
     ],
+    testimonial: {
+      quote:
+        "They understood that an architecture practice is judged by the silence between projects as much as the projects themselves. The new site holds that silence beautifully.",
+      author: "André Forma",
+      role: "Principal",
+      company: "Forma Studio",
+    },
   },
   {
     slug: "lattice-labs",
@@ -92,6 +107,13 @@ export const projects: Project[] = [
       { label: "Activation", value: "+44%" },
       { label: "NPS", value: "+18" },
     ],
+    testimonial: {
+      quote:
+        "Nexus didn't just redesign our dashboard — they gave our team a vocabulary. Every new feature now ships faster because the primitives are already there.",
+      author: "Priya Vasan",
+      role: "Head of Product",
+      company: "Lattice Labs",
+    },
   },
   {
     slug: "north-index",
@@ -117,6 +139,13 @@ export const projects: Project[] = [
       { label: "Subscribers", value: "+5.8k" },
       { label: "Returning", value: "62%" },
     ],
+    testimonial: {
+      quote:
+        "We came in asking for a redesign and left with a publishing system that respects how our readers actually move through long-form work. Rare and refreshing.",
+      author: "Iselin Brandt",
+      role: "Editor-in-Chief",
+      company: "North Index",
+    },
   },
 ];
 
