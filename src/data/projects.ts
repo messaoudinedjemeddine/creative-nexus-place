@@ -107,6 +107,13 @@ export const projects: Project[] = [
       { label: "Activation", value: "+44%" },
       { label: "NPS", value: "+18" },
     ],
+    testimonial: {
+      quote:
+        "Nexus didn't just redesign our dashboard — they gave our team a vocabulary. Every new feature now ships faster because the primitives are already there.",
+      author: "Priya Vasan",
+      role: "Head of Product",
+      company: "Lattice Labs",
+    },
   },
   {
     slug: "north-index",
