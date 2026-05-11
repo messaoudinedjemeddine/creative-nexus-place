@@ -82,6 +82,13 @@ function ProjectPage() {
             </div>
           </section>
 
+          {/* Cover placeholder */}
+          <section className="border-b border-border">
+            <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+              <Placeholder ratio="16/9" label="Cover" caption={`${project.client} — hero composition`} kind="image" />
+            </div>
+          </section>
+
           {/* Meta grid */}
           <section className="border-b border-border bg-[color:var(--signal)]/8">
             <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4 md:py-16">
