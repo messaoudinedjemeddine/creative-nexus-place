@@ -139,6 +139,13 @@ export const projects: Project[] = [
       { label: "Subscribers", value: "+5.8k" },
       { label: "Returning", value: "62%" },
     ],
+    testimonial: {
+      quote:
+        "We came in asking for a redesign and left with a publishing system that respects how our readers actually move through long-form work. Rare and refreshing.",
+      author: "Iselin Brandt",
+      role: "Editor-in-Chief",
+      company: "North Index",
+    },
   },
 ];
 
