@@ -262,11 +262,15 @@ function Placeholder({
   label,
   caption,
   kind = "image",
+  src,
+  size,
 }: {
   ratio?: string;
   label: string;
   caption: string;
   kind?: "image" | "screenshot" | "gif";
+  src?: string;
+  size?: string;
 }) {
   return (
     <figure className="group relative w-full">
@@ -274,36 +278,51 @@ function Placeholder({
         className="relative w-full overflow-hidden border border-border bg-[color:var(--signal)]/5"
         style={{ aspectRatio: ratio }}
       >
+        {src && (
+          <img
+            src={src}
+            alt={caption}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        )}
         <div
           aria-hidden
-          className="absolute inset-0 opacity-[0.18]"
+          className="absolute inset-0 opacity-[0.18] mix-blend-multiply dark:mix-blend-screen"
           style={{
             backgroundImage:
               "repeating-linear-gradient(135deg, var(--signal) 0 1px, transparent 1px 14px)",
           }}
         />
         <div aria-hidden className="absolute inset-0">
-          <div className="absolute left-1/2 top-0 h-full w-px bg-[color:var(--signal)]/20" />
-          <div className="absolute left-0 top-1/2 h-px w-full bg-[color:var(--signal)]/20" />
           <span className="absolute left-3 top-3 h-2 w-2 border-l border-t border-[color:var(--signal)]" />
           <span className="absolute right-3 top-3 h-2 w-2 border-r border-t border-[color:var(--signal)]" />
           <span className="absolute bottom-3 left-3 h-2 w-2 border-b border-l border-[color:var(--signal)]" />
           <span className="absolute bottom-3 right-3 h-2 w-2 border-b border-r border-[color:var(--signal)]" />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-2 px-4 text-center">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[color:var(--signal)]">
-              {kind} · placeholder
-            </span>
-            <span className="text-2xl font-semibold tracking-tight text-foreground/70 md:text-3xl">
-              {label}
-            </span>
-          </div>
+        <div className="absolute left-3 top-3 flex items-center gap-2">
+          <span className="bg-background/80 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[color:var(--signal)] backdrop-blur-sm">
+            {kind}
+          </span>
         </div>
+        {size && (
+          <span className="absolute bottom-3 right-3 bg-background/80 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/80 backdrop-blur-sm">
+            {size}
+          </span>
+        )}
+        {!src && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-2 px-4 text-center">
+              <span className="text-2xl font-semibold tracking-tight text-foreground/70 md:text-3xl">
+                {label}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
       <figcaption className="mt-3 flex items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
         <span className="truncate">{caption}</span>
-        <span className="shrink-0">{ratio}</span>
+        <span className="shrink-0">{ratio}{size ? ` · ${size}` : ""}</span>
       </figcaption>
     </figure>
   );
