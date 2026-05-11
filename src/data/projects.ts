@@ -14,6 +14,7 @@ export type Project = {
   approach: string;
   outcome: string;
   metrics: { label: string; value: string }[];
+  testimonial: { quote: string; author: string; role: string; company: string };
   url?: string;
 };
 
