@@ -85,7 +85,7 @@ function ProjectPage() {
           {/* Cover placeholder */}
           <section className="border-b border-border">
             <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
-              <Placeholder ratio="16/9" label="Cover" caption={`${project.client} — hero composition`} kind="image" />
+              <Placeholder ratio="16/9" size="1600×900" label="Cover" caption={`${project.client} — hero composition`} kind="image" src={`https://picsum.photos/seed/${project.slug}-cover/1600/900`} />
             </div>
           </section>
 
