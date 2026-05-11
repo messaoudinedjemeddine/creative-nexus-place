@@ -75,6 +75,13 @@ export const projects: Project[] = [
       { label: "Sessions", value: "+3.1×" },
       { label: "Bounce", value: "-41%" },
     ],
+    testimonial: {
+      quote:
+        "They understood that an architecture practice is judged by the silence between projects as much as the projects themselves. The new site holds that silence beautifully.",
+      author: "André Forma",
+      role: "Principal",
+      company: "Forma Studio",
+    },
   },
   {
     slug: "lattice-labs",
